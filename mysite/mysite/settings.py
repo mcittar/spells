@@ -79,7 +79,7 @@ DATABASES = {
         'NAME': 'spellapp',
         'USER': 'librarian',
         'PASSWORD': 'qwerty',
-        'HOST': '',
+        'HOST': 'localhost',
         'PORT': '',
     }
 }
