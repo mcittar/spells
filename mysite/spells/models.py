@@ -124,7 +124,7 @@ class Spell(models.Model):
     range = models.CharField(max_length = 50)
     components = models.CharField(max_length = 100)
     duration = models.CharField(max_length = 100)
-    classes = models.ForeignKey(Class, on_delete = models.CASCADE)
+    classes = models.ManyToManyField(Class)
 
     def __str__(self):
         return self.name
