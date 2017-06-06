@@ -23,14 +23,19 @@ class Spell(models.Model):
         (NECROMANCY, 'Necromancy'),
         (TRANSMUTATION, 'Transmutation')
     )
-    
-    name = models.CharField(max_length = 200)
+
+    name = models.CharField(max_length = 100, unique = True)
     level = models.IntegerField(default = 0)
     school = models.CharField(
         max_length = 2,
         choices = SPELL_SCHOOL_CHOICES,
         default = EVOCATION,
     )
+    casting_time = models.CharField(max_length = 200)
+    range = models.CharField(max_length = 50)
+    components = models.CharField(max_length = 100)
+    duration = models.CharField(max_length = 100)
+    classes = models.CharField(max_length = 150)
 
     def __str__(self):
         return self.name
