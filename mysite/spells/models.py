@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 from django.db import models
 
 # Create your models here.
+
 class School(models.Model):
     ABJURATION = 'A'
     CONJURATION = 'C'
@@ -28,6 +29,7 @@ class School(models.Model):
         max_length = 2,
         choices = SPELL_SCHOOL_CHOICES
     )
+
 
 class Class(models.Model):
     ANCIENTS = 'Paladin (Ancients)',
@@ -125,6 +127,7 @@ class Spell(models.Model):
     components = models.CharField(max_length = 100)
     duration = models.CharField(max_length = 100)
     classes = models.ManyToManyField(Class)
+    text = models.CharField(max_length = 3000)
 
     def __str__(self):
         return self.name
