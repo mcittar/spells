@@ -30,6 +30,9 @@ class School(models.Model):
         choices = SPELL_SCHOOL_CHOICES
     )
 
+    def __str__(self):
+        return self.name
+
 
 class Class(models.Model):
     ANCIENTS = 'Paladin (Ancients)',
@@ -117,6 +120,9 @@ class Class(models.Model):
         max_length = 20,
         choices = SPELL_CLASS_CHOICES
     )
+
+    def __str__(self):
+        return self.name
 
 class Spell(models.Model):
     name = models.CharField(max_length = 100, unique = True)
