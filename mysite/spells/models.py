@@ -4,16 +4,15 @@ from __future__ import unicode_literals
 from django.db import models
 
 # Create your models here.
-
 class School(models.Model):
-    ABJURATION = 'A'
-    CONJURATION = 'C'
-    DIVINATION = 'D'
-    ENCHANTMENT = 'E'
-    EVOCATION = 'EV'
-    ILLUSION = 'I'
-    NECROMANCY = 'N'
-    TRANSMUTATION = 'T'
+    ABJURATION = 'Abjuration'
+    CONJURATION = 'Conjuration'
+    DIVINATION = 'Divination'
+    ENCHANTMENT = 'Enchantment'
+    EVOCATION = 'Evocation'
+    ILLUSION = 'Illusion'
+    NECROMANCY = 'Necromancy'
+    TRANSMUTATION = 'Transmutation'
     SPELL_SCHOOL_CHOICES = (
         (ABJURATION, 'Abjuration'),
         (CONJURATION, 'Conjuration'),
@@ -26,7 +25,7 @@ class School(models.Model):
     )
 
     name = models.CharField(
-        max_length = 2,
+        max_length = 20,
         choices = SPELL_SCHOOL_CHOICES
     )
 
